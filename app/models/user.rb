@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :flats, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
   validates :full_name, presence: true
   validates :profile_picture, presence: true

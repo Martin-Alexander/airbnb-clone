@@ -2,6 +2,7 @@ class Flat < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :flat_tags, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
   validates :description, presence: true, length: { minimum: 5 }
   validates :long_description, presence: true, length: { minimum: 50 }

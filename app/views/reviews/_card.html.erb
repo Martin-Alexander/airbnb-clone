@@ -1,0 +1,14 @@
+<div>
+  <h2><%= review.title %></h2>
+  <p><%= review.created_at %></p>
+  <div class="d-flex">
+    <%= cl_image_tag review.user.profile_picture, width: 60 %>
+    <div>
+      <p><%= review.user.full_name %></p>
+      <% review.stars.times do %>
+        <i class="gold fas fa-star"></i>
+      <% end %>
+    </div>
+  </div>
+  <p><%= review.content %></p>
+</div>
