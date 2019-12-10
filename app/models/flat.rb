@@ -1,6 +1,7 @@
 class Flat < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
+  has_many :flat_tags, dependent: :destroy
 
   validates :description, presence: true, length: { minimum: 5 }
   validates :long_description, presence: true, length: { minimum: 50 }
@@ -14,5 +15,9 @@ class Flat < ApplicationRecord
 
   def average_rating
     reviews.sum(:stars).fdiv(reviews.count)
+  end
+
+  def tags
+    flat_tags.pluck(:tag_type)
   end
 end

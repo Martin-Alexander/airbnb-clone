@@ -39,6 +39,10 @@ mgs_flat = Flat.create!(
   user: mg
 )
 
+FlatTag.create(flat: mgs_flat, tag_type: "Pets Allowed")
+FlatTag.create(flat: mgs_flat, tag_type: "Family Friendly")
+FlatTag.create(flat: mgs_flat, tag_type: "Single Bedroom")
+
 Review.create!(
   title: "An all around great flat",
   content: "I have to say that I was really impressed by this flat. It had all of the things that a flat should. I would recommend it to anyone who is looking for a flat. My favourite thing about the flat was the windows and floors and walls.",
