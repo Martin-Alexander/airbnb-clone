@@ -1,0 +1,47 @@
+.flat-card {
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.03) 1px 1px 10px;
+  border-radius: 2px;
+  margin-bottom: 20px
+}
+
+.flat-card-link {
+  color: initial;
+
+  &:hover {
+    text-decoration: none;
+    color: initial;
+  }
+}
+
+.flat-bottom {
+  padding: 10px 80px 10px 10px;
+}
+
+.flat-description {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #585858;
+}
+
+.flat-main-photo {
+  background-size: cover;
+  height: 200px;
+  position: relative;
+}
+
+.flat-user-profile-picture {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -30px;
+  right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 10px;
+}
+

@@ -1,0 +1,15 @@
+<%= link_to flat_path(flat), class: "flat-card-link" do %>
+  <div class="flat-card">
+    <div class="flat-main-photo" style="background-image: url('<%= cl_image_path flat.main_photo %>')">
+      <div class="flat-user-profile-picture" style="background-image: url('<%= cl_image_path flat.user.profile_picture %>')">
+      </div>
+    </div>
+    <div class="flat-bottom">
+      <p class="flat-description"><%= flat.description %></p>
+      <% flat.average_rating.floor.times do %>
+        <i class="gold fas fa-star"></i>
+      <% end %>
+      <span><%= flat.average_rating %> <span class="grey">(<%= flat.reviews.count %> ratings)</span></span>
+    </div>
+  </div>
+<% end %>

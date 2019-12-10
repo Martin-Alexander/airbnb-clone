@@ -1,0 +1,14 @@
+#banner {
+  height: 70px;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.banner-container {
+  height: 100%;
+  margin: 0px auto;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

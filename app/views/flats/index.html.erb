@@ -1,0 +1,29 @@
+<div class="container-fluid site-container">
+  <div class="row">
+    <div class="col-8">
+      <%= form_tag root_path, method: :get, id: "form-flat-filter" do %>
+        <%= text_field_tag :city, params[:city], { class: "input-no-border", placeholder: "London, UK", autocomplete: "off" } %>
+        <%= select_tag :price_range_type, options_for_select(["$", "$$", "$$$", "$$$$"], params[:price_range_type]), { class: "input-no-border" } %>
+        <%= text_field_tag :from, params[:from], { autocomplete: "off", placeholder: "From when", class: "input-datepicker input-no-border" } %>
+        <%= text_field_tag :to, params[:to], { autocomplete: "off", placeholder: "Until when", class: "input-datepicker input-no-border" } %>
+        <%= submit_tag "", { style: "display: none" } %>
+      <% end %>
+      <div class="row">
+        <% (@flats.to_a * 10).each do |flat| %>
+          <div class="col-6">
+            <%= render "flats/card", flat: flat %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div
+        id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
+  </div>
+
+</div>
